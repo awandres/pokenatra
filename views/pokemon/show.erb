@@ -1,0 +1,7 @@
+<h1> <%= @pokemon.name %> </h1>
+  <img src= <%= @pokemon.img_url %> >
+<h3>CP : <%= @pokemon.cp %></h3>
+<h3>Poke Type : <%= @pokemon.poke_type.capitalize %></h3>
+
+<h3><a href = '/pokemon'>Go Back to Main Page</a></h3>
+<h3><a href="/pokemon/<%= @pokemon.id %>/edit">Edit this Pokemon</a></h3>
