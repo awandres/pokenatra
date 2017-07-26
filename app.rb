@@ -4,6 +4,21 @@ require 'active_record'
 
 require_relative 'db/connection'
 require_relative 'models/pokemon'
+require_relative 'models/trainer'
+
+get '/' do
+  erb :menu
+end
+
+get '/trainer' do
+  @trainers = Trainer.all
+  erb :'trainer/index'
+end
+
+get '/trainer/:id' do
+  @trainer = Trainer.find(params[:id])
+  erb :'trainer/show'
+end
 
 get '/pokemon' do
   @pokemons = Pokemon.all
